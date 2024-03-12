@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1A1A1A; /* Same as your header background color */
+  font-family: 'Inter', sans-serif;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

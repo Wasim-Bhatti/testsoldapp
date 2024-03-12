@@ -1,0 +1,61 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1A1A1A;
+    color: #F5F5F5;
+    margin: 0;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header .logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  
+  .header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .header .nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #F5F5F5;
+    text-decoration: none;
+    padding: 10px 15px; /* Increase clickable area */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for hover effect and animation */
+  }
+  
+  .header .nav-links a:hover {
+    color: #FF6B6B;
+    transform: scale(1.05); /* Add animation on hover */
+  }
+  
+  .header .nav-links .sign-up {
+    background-color: #FF6B6B;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #FFFFFF; /* Make the font color brighter */
+    font-weight: 700; /* Make the font more bold */
+    cursor: pointer; /* Change the cursor style to pointer when hovering over the button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for hover effect and animation */
+  }
+  
+  .header .nav-links .sign-up:hover {
+    background-color: #FF3F3F;
+    transform: scale(1.05); /* Add animation on hover */
+  }
