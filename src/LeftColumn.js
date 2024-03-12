@@ -4,7 +4,10 @@ import './App.css';
 function LeftColumn() {
   return (
     <div className="left-column">
-      Hello
+      <div className="box">
+        <h2>Payout Spectrum</h2>
+        <p>Details about the payout spectrum...</p>
+      </div>
     </div>
   );
 }
