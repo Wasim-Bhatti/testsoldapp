@@ -75,6 +75,8 @@ function Row({ item }) {
           fullWidth
           margin="normal"
           className={classes.responseInput}
+          multiline
+          rows={12}
         />
         <Button variant="contained" color="primary" style={{ backgroundColor: '#FF6B6B' }} onClick={handleSubmit}>
           Submit
@@ -99,11 +101,11 @@ function MiddleColumn() {
   return (
     <Box className={classes.root}>
       <IconButton onClick={handlePrevious}>
-        <ArrowUpwardIcon />
+        <ArrowUpwardIcon style={{ color: '#FFFFFF' }} />
       </IconButton>
       <Row item={items[currentIndex]} />
       <IconButton onClick={handleNext}>
-        <ArrowDownwardIcon />
+        <ArrowDownwardIcon style={{ color: '#FFFFFF' }} />
       </IconButton>
     </Box>
   );

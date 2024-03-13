@@ -1,7 +1,7 @@
 import React from 'react';
-import { Tabs, Tab, AppBar } from '@material-ui/core';
+import { Tabs,Tab, AppBar, withStyles } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import HomeIcon from '@material-ui/icons/Home'; // import the icons you want to use
+import HomeIcon from '@material-ui/icons/Home';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import SchoolIcon from '@material-ui/icons/School';
@@ -12,7 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles({
   appBar: {
     backgroundColor: '#FF6B6B',
-    borderRadius: '40px',
+    borderRadius: '30px',
     position: 'sticky',
     top: 0,
     zIndex: 1,
@@ -20,11 +20,33 @@ const useStyles = makeStyles({
     marginLeft: 'auto',
     marginRight: 'auto',
     boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.25)',
+    border: '2px solid white',
     '@media (max-width: 600px)': {
       width: '90%',
     },
   },
+  icon: {
+    color: '#FFFFFF',
+  },
 });
+
+const StyledTab = withStyles({
+  root: {
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+    },
+    '&$selected': {
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    },
+    '&:focus-visible': {
+      backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    },
+  },
+  selected: {},
+})(Tab);
 
 function SubHeader() {
   const classes = useStyles();
@@ -37,13 +59,13 @@ function SubHeader() {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Tabs value={value} onChange={handleChange} centered>
-        <Tab icon={<HomeIcon />} label="Popular" />
-        <Tab icon={<TrendingUpIcon />} label="Controversial" />
-        <Tab icon={<ChatBubbleOutlineIcon />} label="Philosophy" />
-        <Tab icon={<SchoolIcon />} label="Physics" />
-        <Tab icon={<PublicIcon />} label="Politics" />
-        <Tab icon={<ShuffleIcon />} label="Random" />
-        <Tab icon={<SearchIcon />} label="Search" />
+        <StyledTab icon={<HomeIcon className={classes.icon} />} label="Popular" />
+        <StyledTab icon={<TrendingUpIcon className={classes.icon} />} label="Controversial" />
+        <StyledTab icon={<ChatBubbleOutlineIcon className={classes.icon} />} label="Philosophy" />
+        <StyledTab icon={<SchoolIcon className={classes.icon} />} label="Physics" />
+        <StyledTab icon={<PublicIcon className={classes.icon} />} label="Politics" />
+        <StyledTab icon={<ShuffleIcon className={classes.icon} />} label="Random" />
+        <StyledTab icon={<SearchIcon className={classes.icon} />} label="Search" />
       </Tabs>
     </AppBar>
   );
