@@ -26,6 +26,8 @@ const useStyles = makeStyles({
     padding: '2rem',
     marginBottom: '2rem',
     backgroundColor: '#1A1A1A',
+    border: '2px solid #E5E4E2',
+    borderRadius: '15px',
   },
   itemText: {
     fontSize: '0.8rem',
@@ -74,7 +76,7 @@ function Row({ item }) {
           margin="normal"
           className={classes.responseInput}
         />
-        <Button variant="contained" color="primary" onClick={handleSubmit}>
+        <Button variant="contained" color="primary" style={{ backgroundColor: '#FF6B6B' }} onClick={handleSubmit}>
           Submit
         </Button>
       </Box>
