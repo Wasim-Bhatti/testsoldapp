@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tabs,Tab, AppBar, withStyles } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Tabs, Tab, AppBar, withStyles, useMediaQuery } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
@@ -51,6 +51,8 @@ const StyledTab = withStyles({
 function SubHeader() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -59,16 +61,20 @@ function SubHeader() {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Tabs value={value} onChange={handleChange} centered>
-        <StyledTab icon={<HomeIcon className={classes.icon} />} label="Popular" />
-        <StyledTab icon={<TrendingUpIcon className={classes.icon} />} label="Controversial" />
-        <StyledTab icon={<ChatBubbleOutlineIcon className={classes.icon} />} label="Philosophy" />
-        <StyledTab icon={<SchoolIcon className={classes.icon} />} label="Physics" />
-        <StyledTab icon={<PublicIcon className={classes.icon} />} label="Politics" />
-        <StyledTab icon={<ShuffleIcon className={classes.icon} />} label="Random" />
-        <StyledTab icon={<SearchIcon className={classes.icon} />} label="Search" />
+        <StyledTab icon={<HomeIcon className={classes.icon} />} label="Home" />
+        <StyledTab icon={<TrendingUpIcon className={classes.icon} />} label="Prompts" />
+        <StyledTab icon={<ChatBubbleOutlineIcon className={classes.icon} />} label="Collection" />
+        {isMobile && <StyledTab icon={<SchoolIcon className={classes.icon} />} label="Sign Up" />}
+        {!isMobile && <StyledTab icon={<PublicIcon className={classes.icon} />} label="Politics" />}
+        {!isMobile && <StyledTab icon={<ShuffleIcon className={classes.icon} />} label="Random" />}
+        {!isMobile && <StyledTab icon={<SearchIcon className={classes.icon} />} label="Search" />}
       </Tabs>
     </AppBar>
   );
 }
 
 export default SubHeader;
+
+
+
+

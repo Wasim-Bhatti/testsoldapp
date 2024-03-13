@@ -6,6 +6,7 @@ import MiddleColumn from './MiddleColumn';
 import RightColumn from './RightColumn';
 import Header from './Header';
 import SubHeader from './SubHeader';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <MiddleColumn />
         <RightColumn />
       </div>
+      <Footer />
     </div>
   );
 }
