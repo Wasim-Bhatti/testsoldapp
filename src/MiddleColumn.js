@@ -76,7 +76,7 @@ function Row({ item }) {
           margin="normal"
           className={classes.responseInput}
           multiline
-          rows={12}
+          rows={16}
         />
         <Button variant="contained" color="primary" style={{ backgroundColor: '#FF6B6B' }} onClick={handleSubmit}>
           Submit

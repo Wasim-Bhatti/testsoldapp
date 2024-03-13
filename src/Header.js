@@ -1,11 +1,12 @@
 import React from 'react';
 import './Header.css';
+import { ReactComponent as Logo } from './logo.svg';
 
 function Header() {
   return (
     <header className="header">
       <div className="logo-container">
-        <img src="logo.png" alt="logo" className="logo-image" /> {/* Replace "logo.png" with your actual logo image path */}
+        <Logo fill="#FF6B6B" className="logo-image" />
         <h1 className="logo">WriteGather</h1>
       </div>
       <nav>
@@ -13,6 +14,7 @@ function Header() {
           <li><a href="#">Home</a></li>
           <li><a href="#">Mission</a></li>
           <li><a href="#">Roadmap</a></li>
+          <li><a href="#">Apply</a></li>
           <li><a href="#" className="sign-up">Sign Up</a></li>
         </ul>
       </nav>
