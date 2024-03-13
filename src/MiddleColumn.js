@@ -61,6 +61,16 @@ const useStyles = makeStyles({
       backgroundColor: '#1A1A1A',
     },
   },
+
+  icon: {
+    '&:active': {
+      transform: 'scale(0.8)', // Increase the scale down effect
+      transition: 'transform 0.3s, color 0.3s', // Add transition for color
+      boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.2)', // Increase the box shadow
+      color: '#FF6B6B', // Change the color when clicked
+    },
+  },
+  
 });
 
 function Row({ item }) {
@@ -93,7 +103,7 @@ function Row({ item }) {
           margin="normal"
           className={classes.responseInput}
           multiline
-          rows={16}
+          rows={18}
         />
         <Button variant="contained" color="primary" style={{ backgroundColor: '#FF6B6B' }} onClick={handleSubmit}>
           Submit
@@ -116,15 +126,15 @@ function MiddleColumn() {
   };
 
   return (
-    <Box className={classes.root}>
-      <IconButton onClick={handlePrevious}>
-        <ArrowUpwardIcon style={{ color: '#FFFFFF' }} />
-      </IconButton>
-      <Row item={items[currentIndex]} />
-      <IconButton onClick={handleNext}>
-        <ArrowDownwardIcon style={{ color: '#FFFFFF' }} />
-      </IconButton>
-    </Box>
+  <Box className={classes.root}>
+    <IconButton onClick={handlePrevious} style={{ transition: 'transform 0.3s' }}>
+      <ArrowUpwardIcon style={{ color: '#FF6B6B', fontSize: '40px' }} className={classes.icon} />
+    </IconButton>
+    <Row item={items[currentIndex]} />
+    <IconButton onClick={handleNext} style={{ transition: 'transform 0.3s' }}>
+      <ArrowDownwardIcon style={{ color: '#FF6B6B', fontSize: '40px' }} className={classes.icon} />
+    </IconButton>
+  </Box>
   );
 }
 
