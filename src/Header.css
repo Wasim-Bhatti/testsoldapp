@@ -60,3 +60,39 @@
     background-color: #FF3F3F;
     transform: scale(1.05); /* Add animation on hover */
   }
+
+  .menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .nav.open {
+    display: block; /* use block to stack the items vertically */
+  }
+  
+  .nav-links {
+    padding: 0; /* remove padding */
+  }
+  
+  .nav-links li {
+    list-style: none; /* remove bullet points */
+  }
+  
+  @media (min-width: 768px) {
+    .menu-button {
+      display: none;
+    }
+  
+    .nav {
+      display: flex; /* use flex to align items horizontally on large screens */
+    }
+  }
