@@ -11,7 +11,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles({
   appBar: {
-    backgroundColor: 'linear-gradient(20deg, #FF6B6B 10%, #FF6B6B 60%)',
+    backgroundColor: '#FF6B6B',
     borderRadius: '30px',
     position: 'sticky',
     top: 0,
