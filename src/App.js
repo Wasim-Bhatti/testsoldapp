@@ -5,11 +5,13 @@ import LeftColumn from './LeftColumn';
 import MiddleColumn from './MiddleColumn';
 import RightColumn from './RightColumn';
 import Header from './Header';
+import SubHeader from './SubHeader';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <SubHeader />
       <div className="columns">
         <LeftColumn />
         <MiddleColumn />
