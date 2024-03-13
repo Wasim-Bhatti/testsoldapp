@@ -39,6 +39,23 @@ const useStyles = makeStyles({
     color: '#F5F5F5',
   },
   responseInput: {
+    '& label.Mui-focused': {
+      color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#FF6B6B',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
     '& .MuiInputBase-input': {
       color: '#F5F5F5',
       backgroundColor: '#1A1A1A',
