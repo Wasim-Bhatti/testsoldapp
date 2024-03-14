@@ -15,6 +15,14 @@ const useStyles = makeStyles({
   signUpButton: {
     color: '#FF6B6B',
     borderColor: '#FF6B6B',
+    marginBottom: '10px', // Add margin to the bottom
+    fontWeight: 'bold', // Make the text bolder
+    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)', // Add a box shadow
+    '&:hover': {
+      backgroundColor: '#FF6B6B',
+      transform: 'scale(1.05)', // Add animation on hover
+      color: 'white', // Change the text color to white
+    },
   },
 });
 
