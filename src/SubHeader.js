@@ -1,17 +1,20 @@
 import React from 'react';
 import { Tabs, Tab, AppBar, withStyles, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import HomeIcon from '@material-ui/icons/Home';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import AccountBalanceTwoToneIcon from '@mui/icons-material/AccountBalanceTwoTone';
+import LibraryBooksTwoToneIcon from '@mui/icons-material/LibraryBooksTwoTone';
 import SchoolIcon from '@material-ui/icons/School';
 import PublicIcon from '@material-ui/icons/Public';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import SearchIcon from '@material-ui/icons/Search';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 const useStyles = makeStyles({
   appBar: {
     backgroundColor: '#FF6B6B',
+    color: '#FFFFFF',
+    fontStyle: 'bold',
     borderRadius: '30px',
     position: 'sticky',
     top: 0,
@@ -61,12 +64,14 @@ function SubHeader() {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Tabs value={value} onChange={handleChange} centered>
-        <StyledTab icon={<HomeIcon className={classes.icon} />} label="Home" />
+        <StyledTab icon={<HomeRoundedIcon className={classes.icon} />} label="Home" />
         <StyledTab icon={<TrendingUpIcon className={classes.icon} />} label="Prompts" />
-        <StyledTab icon={<ChatBubbleOutlineIcon className={classes.icon} />} label="Collection" />
+        <StyledTab icon={<AccountBalanceTwoToneIcon className={classes.icon} />} label="Museum" />
         {isMobile && <StyledTab icon={<SchoolIcon className={classes.icon} />} label="Sign Up" />}
-        {!isMobile && <StyledTab icon={<PublicIcon className={classes.icon} />} label="Politics" />}
-        {!isMobile && <StyledTab icon={<ShuffleIcon className={classes.icon} />} label="Random" />}
+        {!isMobile && <StyledTab icon={<PublicIcon className={classes.icon} />} label="Discussion" />}
+        {!isMobile && <StyledTab icon={<LibraryBooksTwoToneIcon className={classes.icon} />} label="Portfolio
+        
+        " />}
         {!isMobile && <StyledTab icon={<SearchIcon className={classes.icon} />} label="Search" />}
       </Tabs>
     </AppBar>

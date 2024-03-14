@@ -47,6 +47,8 @@ body {
   background-color: #1A1A1A;
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   margin-left: 100px; /* Add right margin to the left column */
@@ -56,6 +58,8 @@ body {
   background-color: #1A1A1A;
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   margin-right: 100px;
