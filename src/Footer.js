@@ -8,10 +8,18 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="social-media">
-          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
-          <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
         </div>

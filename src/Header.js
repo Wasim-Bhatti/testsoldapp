@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, Button } from '@material-ui/core';
+import {
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useMediaQuery,
+  useTheme,
+  Button,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import { ReactComponent as Logo } from './logo.svg'; // import the logo as a React Component
@@ -24,6 +33,11 @@ const useStyles = makeStyles({
       color: 'white', // Change the text color to white
     },
   },
+  drawer: {
+    backgroundColor: '#1A1A1A', // change this to your desired color
+    color: '#FFFFFF', // change this to your desired color
+    paddingLeft: '20px',
+  },
 });
 
 function Header() {
@@ -33,7 +47,10 @@ function Header() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
       return;
     }
     setIsOpen(open);
@@ -53,7 +70,9 @@ function Header() {
           </ListItem>
         ))}
         <ListItem button key="Sign Up">
-          <Button variant="outlined" className={classes.signUpButton}>Sign Up</Button>
+          <Button variant="outlined" className={classes.signUpButton}>
+            Sign Up
+          </Button>
         </ListItem>
       </List>
     </div>
@@ -67,10 +86,19 @@ function Header() {
       </div>
       {isMobile ? (
         <>
-          <IconButton edge="start" className={classes.menuButton} aria-label="menu" onClick={toggleDrawer(true)}>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+          >
             <MenuIcon />
           </IconButton>
-          <Drawer open={isOpen} onClose={toggleDrawer(false)}>
+          <Drawer
+            open={isOpen}
+            onClose={toggleDrawer(false)}
+            classes={{ paper: classes.drawer }}
+          >
             {list()}
           </Drawer>
         </>
@@ -83,7 +111,9 @@ function Header() {
               </li>
             ))}
             <li key="Sign Up">
-              <Button variant="outlined" className={classes.signUpButton}>Sign Up</Button>
+              <Button variant="outlined" className={classes.signUpButton}>
+                Sign Up
+              </Button>
             </li>
           </ul>
         </nav>

@@ -1,12 +1,17 @@
 import React from 'react';
-import { Tabs, Tab, AppBar, withStyles, useMediaQuery } from '@material-ui/core';
+import {
+  Tabs,
+  Tab,
+  AppBar,
+  withStyles,
+  useMediaQuery,
+} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import AccountBalanceTwoToneIcon from '@mui/icons-material/AccountBalanceTwoTone';
 import LibraryBooksTwoToneIcon from '@mui/icons-material/LibraryBooksTwoTone';
 import SchoolIcon from '@material-ui/icons/School';
 import PublicIcon from '@material-ui/icons/Public';
-import ShuffleIcon from '@material-ui/icons/Shuffle';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
@@ -22,7 +27,8 @@ const useStyles = makeStyles({
     width: '60%',
     marginLeft: 'auto',
     marginRight: 'auto',
-    boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.25), 0px 20px 40px rgba(0, 0, 0, 0.3)',
+    boxShadow:
+      '0px 10px 20px rgba(0, 0, 0, 0.25), 0px 20px 40px rgba(0, 0, 0, 0.3)',
     border: '2px solid white',
     '@media (max-width: 600px)': {
       width: '90%',
@@ -64,22 +70,47 @@ function SubHeader() {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Tabs value={value} onChange={handleChange} centered>
-        <StyledTab icon={<HomeRoundedIcon className={classes.icon} />} label="Home" />
-        <StyledTab icon={<TrendingUpIcon className={classes.icon} />} label="Prompts" />
-        <StyledTab icon={<AccountBalanceTwoToneIcon className={classes.icon} />} label="Museum" />
-        {isMobile && <StyledTab icon={<SchoolIcon className={classes.icon} />} label="Sign Up" />}
-        {!isMobile && <StyledTab icon={<PublicIcon className={classes.icon} />} label="Discussion" />}
-        {!isMobile && <StyledTab icon={<LibraryBooksTwoToneIcon className={classes.icon} />} label="Portfolio
+        <StyledTab
+          icon={<HomeRoundedIcon className={classes.icon} />}
+          label="Home"
+        />
+        <StyledTab
+          icon={<TrendingUpIcon className={classes.icon} />}
+          label="Prompts"
+        />
+        <StyledTab
+          icon={<AccountBalanceTwoToneIcon className={classes.icon} />}
+          label="Museum"
+        />
+        {isMobile && (
+          <StyledTab
+            icon={<SchoolIcon className={classes.icon} />}
+            label="Sign Up"
+          />
+        )}
+        {!isMobile && (
+          <StyledTab
+            icon={<PublicIcon className={classes.icon} />}
+            label="Discussion"
+          />
+        )}
+        {!isMobile && (
+          <StyledTab
+            icon={<LibraryBooksTwoToneIcon className={classes.icon} />}
+            label="Portfolio
         
-        " />}
-        {!isMobile && <StyledTab icon={<SearchIcon className={classes.icon} />} label="Search" />}
+        "
+          />
+        )}
+        {!isMobile && (
+          <StyledTab
+            icon={<SearchIcon className={classes.icon} />}
+            label="Search"
+          />
+        )}
       </Tabs>
     </AppBar>
   );
 }
 
 export default SubHeader;
-
-
-
-

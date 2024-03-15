@@ -65,6 +65,15 @@ body {
   margin-right: 100px;
 }
 
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .right-column {
+    margin-right: 0; /* Remove the right margin */
+    margin-left: 0; /* Remove the left margin if any */
+    align-items: center; /* Center the items horizontally */
+  }
+}
+
 .middle-column {
   flex: 3;
   background-color: #282c34;

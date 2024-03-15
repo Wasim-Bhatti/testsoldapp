@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
-import { Button, Typography, Box, TextField, Paper, IconButton } from '@material-ui/core';
+import {
+  Button,
+  Typography,
+  Box,
+  TextField,
+  Paper,
+  IconButton,
+} from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 // Dummy data
-const items = [...Array(1000).keys()].map(i => ({
+const items = [...Array(1000).keys()].map((i) => ({
   id: i,
   text: `Item #${i}`,
-  prompt: `What are your thoughts on the creation of the universe? #${i}`
+  prompt: `What are your thoughts on the creation of the universe? #${i}`,
 }));
+
+Row.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    prompt: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 // Define your styles
 const useStyles = makeStyles({
@@ -70,7 +86,6 @@ const useStyles = makeStyles({
       color: '#FF6B6B', // Change the color when clicked
     },
   },
-  
 });
 
 function Row({ item }) {
@@ -94,9 +109,9 @@ function Row({ item }) {
         <Typography color="textSecondary" className={classes.promptText}>
           {item.prompt}
         </Typography>
-        <TextField 
-          label="Your response" 
-          variant="outlined" 
+        <TextField
+          label="Your response"
+          variant="outlined"
           value={response}
           onChange={handleResponseChange}
           fullWidth
@@ -105,7 +120,12 @@ function Row({ item }) {
           multiline
           rows={18}
         />
-        <Button variant="contained" color="primary" style={{ backgroundColor: '#FF6B6B' }} onClick={handleSubmit}>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ backgroundColor: '#FF6B6B' }}
+          onClick={handleSubmit}
+        >
           Submit
         </Button>
       </Box>
@@ -118,23 +138,32 @@ function MiddleColumn() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex(prevIndex => Math.min(prevIndex + 1, items.length - 1));
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, items.length - 1));
   };
 
   const handlePrevious = () => {
-    setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
   return (
-  <Box className={classes.root}>
-    <IconButton onClick={handlePrevious} style={{ transition: 'transform 0.3s' }}>
-      <ArrowUpwardIcon style={{ color: '#FF6B6B', fontSize: '40px' }} className={classes.icon} />
-    </IconButton>
-    <Row item={items[currentIndex]} />
-    <IconButton onClick={handleNext} style={{ transition: 'transform 0.3s' }}>
-      <ArrowDownwardIcon style={{ color: '#FF6B6B', fontSize: '40px' }} className={classes.icon} />
-    </IconButton>
-  </Box>
+    <Box className={classes.root}>
+      <IconButton
+        onClick={handlePrevious}
+        style={{ transition: 'transform 0.3s' }}
+      >
+        <ArrowUpwardIcon
+          style={{ color: '#FF6B6B', fontSize: '40px' }}
+          className={classes.icon}
+        />
+      </IconButton>
+      <Row item={items[currentIndex]} />
+      <IconButton onClick={handleNext} style={{ transition: 'transform 0.3s' }}>
+        <ArrowDownwardIcon
+          style={{ color: '#FF6B6B', fontSize: '40px' }}
+          className={classes.icon}
+        />
+      </IconButton>
+    </Box>
   );
 }
 
